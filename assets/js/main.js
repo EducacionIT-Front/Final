@@ -1,4 +1,4 @@
-
+console.log("main.js cargado");
 document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("students");
   fetch("assets/data/estudiantes.csv")
@@ -20,5 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
         container.appendChild(col);
       });
+    })
+    .catch(err => {
+      console.error("Error al cargar estudiantes.csv:", err);
     });
 });
